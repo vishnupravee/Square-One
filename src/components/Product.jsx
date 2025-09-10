@@ -13,11 +13,15 @@ const Product = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  if (!images || images.length === 0) return; // prevent errors
+
+  const interval = setInterval(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, [images.length]); // ✅ dependency added
+
 
   const prevImage = () => {
     setCurrentIndex((prevIndex) =>
