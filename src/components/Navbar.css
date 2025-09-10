@@ -1,0 +1,183 @@
+/* =========================
+   Base Navbar (your code)
+   ========================= */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #ff3b30;
+}
+
+.navigation {
+  background: transparent;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.navigation ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.navigation ul li {
+  list-style: none;
+  width: 100px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  left: -55px;
+}
+
+.navigation ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.navigation ul li .icon {
+  font-size: 22px;
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+  transition: 0.3s;
+}
+
+.navigation ul li .text {
+  margin-top: 5px;
+  font-size: 12px;
+  opacity: 0.7;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.navigation ul li.active .icon {
+  transform: translateY(-8px);
+}
+
+.navigation ul li.active .text {
+  opacity: 1;
+  font-weight: 600;
+}
+
+.indicator {
+  position: absolute;
+  top: 0px;
+  left: -32px;
+  width: 47px;
+  height: 47px;
+  background: #ff3b30;
+  border-radius: 50%;
+  border: 4px solid #111;
+  transition: 0.4s ease;
+  z-index: 1;
+}
+
+/* =========================
+   RESPONSIVENESS
+   ========================= */
+
+/* Tablets (≤ 991px) */
+@media screen and (max-width: 991px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .navigation ul li {
+    width: 80px;
+    left: -20px; /* reduce offset */
+  }
+
+  .navigation ul li a {
+    font-size: 12px;
+  }
+
+  .navigation ul li .icon {
+    font-size: 20px;
+  }
+
+  .navigation ul li .text {
+    font-size: 11px;
+  }
+
+  .indicator {
+    width: 40px;
+    height: 40px;
+    left: -20px;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media screen and (max-width: 600px) {
+  .navbar-container {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .navigation ul {
+    gap: 5px;
+  }
+
+  .navigation ul li {
+    width: 60px;
+    height: 70px;
+    left: 0; /* align properly */
+  }
+
+  .navigation ul li a {
+    font-size: 11px;
+  }
+
+  .navigation ul li .icon {
+    font-size: 18px;
+  }
+
+  .navigation ul li .text {
+    font-size: 10px;
+  }
+
+  .indicator {
+    width: 35px;
+    height: 35px;
+    border: 3px solid #111;
+    left: 0;
+  }
+}

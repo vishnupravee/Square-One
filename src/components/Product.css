@@ -1,0 +1,148 @@
+.product-section {
+  text-align: center;
+  margin: 50px;
+  background-color: #111;
+  padding: 50px 20px;
+  border-radius: 15px;
+}
+
+.section-heading {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap; /* already responsive */
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.image-slider {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.image-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.nav-btn.left {
+  left: 10px;
+}
+
+.nav-btn.right {
+  right: 10px;
+}
+
+.product-description {
+  max-width: 400px;
+  color: white;
+}
+
+.product-description h2 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.product-description p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: white;
+}
+
+.add-to-cart {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* =======================
+   RESPONSIVE FIXES
+   ======================= */
+
+/* Tablets */
+@media screen and (max-width: 991px) {
+  .section-heading {
+    font-size: 28px;
+  }
+
+  .image-slider {
+    width: 300px;
+    height: 300px;
+  }
+
+  .product-description {
+    max-width: 350px;
+  }
+}
+
+/* Mobiles */
+@media screen and (max-width: 600px) {
+  .product-section {
+    margin: 30px 15px;
+    padding: 30px 15px;
+  }
+
+  .section-heading {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .image-slider {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  .product-description {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .product-description h2 {
+    font-size: 20px;
+  }
+
+  .product-description p {
+    font-size: 14px;
+  }
+
+  .add-to-cart {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
