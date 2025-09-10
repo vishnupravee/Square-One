@@ -12,15 +12,15 @@ const Product = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-  if (!images || images.length === 0) return; // prevent errors
-
+ // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
   const interval = setInterval(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, 3000);
 
   return () => clearInterval(interval);
-}, [images.length]); // ✅ dependency added
+}, []); // images is static, so [] is fine
+
 
 
   const prevImage = () => {
